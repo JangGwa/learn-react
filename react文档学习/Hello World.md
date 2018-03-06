@@ -24,7 +24,7 @@ f(); // 6
 ```javascript
 var adder = {
   base : 1,
-    
+
   add : function(a) {
     var f = v => v + this.base;
     return f(a);
@@ -35,7 +35,7 @@ var adder = {
     var b = {
       base : 2
     };
-            
+
     return f.call(b, a);
   }
 };
@@ -45,5 +45,11 @@ console.log(adder.addThruCall(1)); // 仍然输出 2（而不是3 ——译者�
 ```
 
 ### 2.类
+
+类实际上就是'特殊的函数'，由 类表达式和类申明组成。函数申明与类申明一个重要区别就是，函数申明会申明提升，类申明不会。
+
+构造函数: 一个类只能拥有一个名为'constructor'的特殊方法。
+
+静态方法: static 关键字来定义一个静态方法。调用静态方法不需要实例化该类，但不能通过一个类实例调用静态方法。
 
 
