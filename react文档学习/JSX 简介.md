@@ -41,3 +41,7 @@ const element = {
     }
 };
 ```
+
+# TODO
+- React DOM 在渲染之前怎么把所有内容转换成字符串?
+- React.createElement() 方法的执行流程是怎样的?
