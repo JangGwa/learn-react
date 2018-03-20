@@ -10,6 +10,18 @@ React Fiber 的目标是增强 React 在动画、布局和手势等各个领域�
 ## fiber 的结构
 具体来说，一个 fiber 是一个包含了组件及其输入输出的 JavaScript 对象。
 
+### type and key
+type 和 key 在 fiber 中的用途与其在 React 元素中的用途相同。（实际上，当从一个元素创建一个 fiber，这两个字段是直接拷贝过来的。）
+
+fiber 的 type 描述了它对应的组件。对于复合组件，type 是函数或者组件类本身。对于宿主环境的组件（div、span 等），type 是一个字符串。
+
+从概念上来讲，type 是执行过程被栈帧跟踪记录的函数（就好像 v = f(d)）。
+
+key 则与 type 一起，被用来在协调期间决定是否 fiber 可以被重新使用。
+
+### child and sibling
+这些字段指向了其他 fibers，它们描述了 fiber 构成的递归结构的树。
+
 ### return
 程序处理完当前 fiber 后应该返回 fiber。返回的 fiber 在概念上等同于返回栈帧的地址。
 
