@@ -66,6 +66,21 @@ Flux 最大的特点就是数据的单向流动
 
 ## Redux
 如果你以前使用 Flux，那么你只需要注意一个重要的区别。Redux 没有 Dispatcher 且不支持多个 store。相反，只有一个单一的 store 和一个根级的 reduce 函数（reducer）。
+### Store
+Store 就是保存数据的地方，你可以把它看成一个容器。整个应用只能有一个 Store。
+
+Redux 提供createStore这个函数，用来生成 Store。
+### Action
+State 的变化，会导致 View 的变化。但是，用户接触不到 State，只能接触到 View。所以，State 的变化必须是 View 导致的。Action 就是 View 发出的通知，表示 State 应该要发生变化了。
+
+### store.dispatch()
+store.dispatch()是 View 发出 Action 的唯一方法。
+
+### Reducer
+Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。
+
+### store.subscribe()
+Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。
 
 
 ## Redux middleware
