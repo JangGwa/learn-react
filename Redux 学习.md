@@ -81,6 +81,3 @@ Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会
 
 ### store.subscribe()
 Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。
-
-
-## Redux middleware
